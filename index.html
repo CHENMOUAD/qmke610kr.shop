@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <script>
+        function otta() {
+            window.open("https://line.me/ti/p/YOUR_LINE_ID", "_blank");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2025</title>
+    <style>
+        :root {
+            --主要深海色: #0d1b2a;
+            --副次金色: #ffd60a;
+            --强调红色: #e63946;
+            --白色文字: #ffffff;
+            --深色文字: #1b263b;
+            --浅色背景: #f8f9fa;
+            --渐变背景: linear-gradient(180deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+            --卡片阴影: 0 12px 24px rgba(13, 27, 42, 0.15);
+            --平滑过渡: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .content-layer {
+            width: 100%;
+            padding: 3rem 1.25rem;
+            position: relative;
+        }
+
+        .content-layer:nth-child(odd) {
+            background: var(--渐变背景);
+            color: var(--白色文字);
+        }
+
+        .content-layer:nth-child(even) {
+            background: var(--浅色背景);
+            color: var(--深色文字);
+        }
+
+        .content-layer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 214, 10, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .inner-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .primary-headline {
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--副次金色), #ffca28);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .secondary-headline {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .secondary-headline::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
+            height: 0.25rem;
+            background: var(--副次金色);
+            border-radius: 2px;
+        }
+
+        .description-text {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .featured-media {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 20px;
+            margin: 2.5rem auto;
+            display: block;
+            border: 4px solid var(--副次金色);
+            box-shadow: var(--卡片阴影);
+            transition: var(--平滑过渡);
+        }
+
+        .featured-media:hover {
+            transform: scale(1.03) rotateY(2deg);
+            box-shadow: 0 20px 40px rgba(13, 27, 42, 0.25);
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, var(--强调红色), #dc2626);
+            color: var(--白色文字);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--平滑过渡);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+            margin: 2rem 0.75rem;
+            position: relative;
+            overflow: hidden;
+            text-transform: none;
+            border: 3px solid var(--副次金色);
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.7s;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(230, 57, 70, 0.6);
+        }
+
+        .action-button:hover::before {
+            left: 100%;
+        }
+
+        .warning-section {
+            background: rgba(255, 214, 10, 0.1);
+            border: 2px solid var(--副次金色);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .warning-section::before {
+            content: '⚠️';
+            font-size: 2rem;
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            background: var(--浅色背景);
+            padding: 0 1rem;
+        }
+
+        .warning-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--副次金色);
+            margin-bottom: 1rem;
+        }
+
+        .warning-list {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .warning-list li {
+            margin-bottom: 0.75rem;
+            list-style: none;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .warning-list li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            color: var(--副次金色);
+        }
+
+        .stats-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border: 2px solid var(--副次金色);
+        }
+
+        .stats-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .stats-numbers {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--副次金色);
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--强调红色), #dc2626);
+            color: var(--白色文字);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            animation: breathing-glow 2.5s infinite ease-in-out;
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.5);
+            border: 3px solid var(--副次金色);
+            white-space: nowrap;
+        }
+
+        @keyframes breathing-glow {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 10px 30px rgba(230, 57, 70, 0.5);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.06);
+                box-shadow: 0 15px 45px rgba(230, 57, 70, 0.8);
+            }
+        }
+
+        .risk-disclosure {
+            background: var(--主要深海色);
+            color: var(--白色文字);
+            padding: 3rem 1.25rem;
+            text-align: center;
+        }
+
+        .risk-title {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .risk-highlight {
+            color: var(--副次金色);
+        }
+
+        .risk-details {
+            font-size: 1rem;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            text-align: left;
+        }
+
+        .legal-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .legal-anchor {
+            color: var(--副次金色);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border: 2px solid var(--副次金色);
+            border-radius: 30px;
+            transition: var(--平滑过渡);
+        }
+
+        .legal-anchor:hover {
+            background: var(--副次金色);
+            color: var(--主要深海色);
+        }
+
+        @media (max-width: 768px) {
+            .content-layer {
+                padding: 2rem 1rem;
+            }
+
+            .featured-media {
+                max-width: 350px;
+            }
+
+            .action-button {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+            }
+
+            .floating-action {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+                bottom: 1rem;
+            }
+
+            .legal-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .warning-section,
+            .stats-highlight {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-layer {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .featured-media {
+                max-width: 300px;
+            }
+
+            .action-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+
+            .floating-action {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Hero Content Layer -->
+        <section class="content-layer">
+            <div class="inner-container">
+                <h1 class="primary-headline">
+                   私の個人的な実体験を共有する
+                </h1>
+                
+                <p class="description-text">
+                    私はTwitch、YouTube、TikTokで毎回の株式トレード判断をリアルタイムで配信している、おそらく世界で唯一の人間です。これは投資アドバイスではなく、確実に儲かる秘訣でもありません。一般的なトレーダーとしての真実の記録です。
+                </p>
+                
+                <img src="img/1.jpg" class="featured-media" alt="リアルタイム配信" loading="lazy">
+                
+                <button class="action-button" onclick="otta()"> 今すぐ参加 - Lineで交流</button>
+            </div>
+        </section>
+
+        <!-- Statistics Content Layer -->
+        <section class="content-layer">
+            <div class="inner-container">
+                <h2 class="secondary-headline">過去3週間の取引実績</h2>
+                
+                <div class="stats-highlight">
+                    <p class="stats-text">
+                        過去3週間で<span class="stats-numbers">56回</span>の取引を実行<br>
+                        利益: <span class="stats-numbers">42回</span> / 損失: <span class="stats-numbers">14回</span>
+                    </p>
+                </div>
+                
+                <p class="description-text">
+                    ただし、市場は常に不確実性に満ちており、過去の成績は将来の結果を保証するものではなく、投資アドバイスではありません。SEC最新データによると、個人投資家の78%以上が株式市場で損失を出しているため、常にリマインドします：投資にはリスクがあり、生活に必要な資金で冒険してはいけません。
+                </p>
+                
+                <button class="action-button" onclick="otta()"> 今すぐ参加 - Lineで交流</button>
+            </div>
+        </section>
+
+        <!-- Community Content Layer -->
+        <section class="content-layer">
+            <div class="inner-container">
+                <h2 class="secondary-headline">無料コミュニティへの招待</h2>
+                
+                <img src="img/2.jpg" class="featured-media" alt="コミュニティ" loading="lazy">
+                
+                <p class="description-text">
+                    私のLineグループに無料で参加できます。隠れた料金も「必勝コース」もありません。最も真実の取引記録と思考プロセスだけがあります。
+                </p>
+                
+                <div class="warning-section">
+                    <h3 class="warning-title">誤解しないでください：</h3>
+                    <ul class="warning-list">
+                        <li>これは「一夜致富」グループではありません - 市場にはリスクがあり、損失は避けられない道です</li>
+                        <li>完璧な答えはありません - 6年間、毎日4時間チャートを見続けた経験があるだけです</li>
+                        <li>グループ内での課金は厳禁 - 有料コンテンツを発見したら即座に報告してください</li>
+                    </ul>
+                </div>
+                
+                <p class="description-text">
+                    私がこうしているのは自分の能力を証明するためではありません（実際、よく間違いを犯します）。真に透明で相互学習できる投資交流プラットフォームを構築したいからです。「一夜暴富」の近道を期待しているなら、ここは適さないかもしれません。しかし、実際の取引記録を観察して投資認識を向上させる意欲があるなら、参加を歓迎します。
+                </p>
+                
+                <p class="description-text">
+                    最終的に参加するかどうかに関わらず、コースは売らず、料金は取らず、真実の取引記録のみを共有します。適していれば来てください、適していなくても成功と幸せを心から願っています。
+                </p>
+                
+                <button class="action-button" onclick="otta()"> 今すぐ参加 - Lineで交流</button>
+            </div>
+        </section>
+
+        <!-- Risk Disclosure -->
+        <footer class="risk-disclosure">
+            <div class="inner-container">
+                <h3 class="risk-title">
+                    ⚠️ <span class="risk-highlight">重要なリスク提示</span>
+                </h3>
+                <div class="risk-details">
+                    • 本サービスは一般的な市場情報のみを提供し、いかなる投資アドバイスや推奨も構成しません。<br>
+                    • 金融市場にはリスクがあり、投資元本の一部または全部を失う可能性があります。<br>
+                    • 表示されている例はすべて過去のデータ分析であり、将来の収益を保証するものではありません。<br>
+                    • 投資家は自身のリスク許容度に基づいて慎重に判断すべきです。<br>
+                    • すべての情報は客観的事実の陳述であり、投資アドバイスを構成しません。
+                </div>
+                
+                <nav class="legal-navigation">
+                    <a href="privacy.html" class="legal-anchor">プライバシーポリシー</a>
+                    <a href="terms.html" class="legal-anchor">利用規約</a>
+                </nav>
+            </div>
+        </footer>
+
+        <!-- Floating Action Button -->
+        <button class="floating-action" onclick="otta()">
+            今すぐ参加 - Lineで交流
+        </button>
+    </div>
+
+   
+</body>
+</html>
